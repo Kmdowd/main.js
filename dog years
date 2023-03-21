@@ -1,0 +1,16 @@
+// My human age in years
+var myAge = 30;
+// First 2 years of a dogs life
+var earlyYears = 2;
+// First 2 years of a dogs life converted to human years
+earlyYears *= 10.5;
+// subtracting accounted for first 2 years
+var laterYears = myAge - 2;
+// Equating later years to dog years
+laterYears = laterYears *= 4;
+// Adding early years and dog years to caculate age in human years
+var myAgeInDogYears = earlyYears + laterYears;
+// Creating variable of my name in lower case
+var myName = 'Kyle'.toLowerCase();
+
+console.log(`My name is ${myName}. I am ${myAge} years old in human years which is ${myAgeInDogYears} years old in dog years.`);
