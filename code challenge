@@ -8,34 +8,30 @@ const findSum = function(array) {
 };
   
 const findFrequency = function(array) {
-    var freq = {};
-    var mostCommon = array[0], maxCount = 1;
-    var leastCommon = array [0];
-    for(let i = 0; i < array.length; i++)
-    {
-        var element = array[i];
+  var freq = {};
+  var mostCommon = array[0];
+  var leastCommon = array [0];
+  for(let i = 0; i < array.length; i++)
+  {
+      var element = array[i];
+      if(!freq[element]) freq[element] = 1;
+      else
+          freq[element]++;  
+      if(freq[element] > freq[mostCommon])
+          mostCommon = element;
+
+
+      for (let j = 0; j < array.length; j++) {
+        var element = array[j];
         if(!freq[element]) freq[element] = 1;
         else
             freq[element]++;  
-        if(freq[element] > maxCount)
-        {
-            mostCommon = element;
-            maxCount = freq[element];
-        }
-        for (let j = 0; j < array.length; j++) {
-          var element = array[j];
-          if(!freq[element]) freq[element] = 1;
-          else
-              freq[element]++;  
-          if(freq[element] < freq[leastCommon])
+        if(freq[element] < freq[leastCommon])
+            leastCommon = element;
+      }
+  }
 
-              leastCommon = element;
-              minCount = freq[element];
-          
-        }
-    }
-
-return `most: ${mostCommon}, least: ${leastCommon}`
+return `Most: '${mostCommon}', Least: '${leastCommon}'`
 };
   
 const isPalindrome = function(str) {
