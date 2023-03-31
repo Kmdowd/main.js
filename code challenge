@@ -30,8 +30,8 @@ const findFrequency = function(array) {
             leastCommon = element;
       }
   }
-
-return `most: '${mostCommon}', least: '${leastCommon}'`
+  var frequency = `most: '${mostCommon}', least: '${leastCommon}'`
+return frequency
 };
   
 const isPalindrome = function(str) {
