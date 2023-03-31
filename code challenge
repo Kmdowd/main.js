@@ -1,0 +1,84 @@
+const findSum = function(array) {
+    const initialValue = 0;
+    const sumWithInitial = array.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    initialValue
+  );
+      return sumWithInitial;
+};
+  
+const findFrequency = function(array) {
+    var freq = {};
+    var mostCommon = array[0];
+    var leastCommon = array [0];
+    for(let i = 0; i < array.length; i++)
+    {
+        var element = array[i];
+        if(!freq[element]) freq[element] = 1;
+        else
+            freq[element]++;  
+        if(freq[element] > freq[mostCommon])
+            mostCommon = element;
+
+
+        for (let j = 0; j < array.length; j++) {
+          var element = array[j];
+          if(!freq[element]) freq[element] = 1;
+          else
+              freq[element]++;  
+          if(freq[element] < freq[leastCommon])
+              leastCommon = element;
+        }
+    }
+
+return `Most: ${mostCommon}, Least: ${leastCommon}`
+};
+  
+const isPalindrome = function(str) {
+    var str = str.toLowerCase();
+    var word = Math.floor(str.length / 2);
+    for (var i = 0; i < word; i++)
+      if (str[i] !== str[str.length - i - 1])
+        return false;
+    return true;
+};
+  
+const largestPair = function(array) {
+   
+  var products = [];
+
+  for (var i = 0; i < array.length; i++) {
+    var currentNum = array[i];
+    var nextNum = array[i + 1];
+
+    var product = currentNum * nextNum;
+  
+    if (product) {
+    products.push(product);
+    }
+  }
+  var largestProduct = Math.max(...products);
+  
+  return largestProduct;
+};
+  
+const removeParenth = function(str) {
+    for (var i = 0; i < str.length; i++) {
+        const element = str[i];
+      
+        newStr = str.replace(/\(.*\)/, '');
+      }
+        return newStr
+};
+  
+const scoreScrabble = function(str) {
+    const alphabet = {a: 1, e: 1, i: 1, o: 1, u: 1, l: 1, n: 1, r: 1, s: 1, t: 1, d: 2, g: 2, b: 3, c: 3, m: 3, p: 3, f: 4, h: 4, v: 4, w: 4, y: 4, k: 5, j: 8, x: 8, q: 10, z:10};
+
+    var sum = 0
+    
+    for (let i = 0; i < str.length; i++) {
+      var letter = str[i];
+      sum += alphabet[letter]
+    }
+      return (sum);
+};
